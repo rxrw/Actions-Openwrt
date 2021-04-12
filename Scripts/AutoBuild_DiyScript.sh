@@ -10,13 +10,12 @@ Diy_Core() {
 	INCLUDE_AutoUpdate=true
 	INCLUDE_AutoBuild_Tools=true
 	INCLUDE_DRM_I915=true
+	INCLUDE_Translation_Converter=
 }
 
 Firmware-Diy() {
 	Update_Makefile exfat package/kernel/exfat
-	Replace_File CustomFiles/uhttpd.po feeds/luci/applications/luci-app-uhttpd/po/zh-cn
 	Replace_File CustomFiles/webadmin.po package/lean/luci-app-webadmin/po/zh-cn
-	Replace_File CustomFiles/mwan3.config package/feeds/packages/mwan3/files/etc/config mwan3
 
 	# Modify default IP
 	sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
