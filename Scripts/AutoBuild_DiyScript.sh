@@ -21,7 +21,7 @@ Firmware-Diy() {
 	AddPackage svn ../feeds/packages/admin netdata https://github.com/openwrt/packages/trunk/admin
 
 	# Modify default IP
-	sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
+	# sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
 	case ${TARGET_PROFILE} in
 	d-team_newifi-d2)
 		Replace_File CustomFiles/mac80211.sh package/kernel/mac80211/files/lib/wifi
